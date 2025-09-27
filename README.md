@@ -9,7 +9,7 @@ remove tasks, where each task has a title, description, status and due date/time
 
 ## Architecture
 
-The project has a React frontend, C# .NET backend and PostgreSQL database all 
+The project has a React frontend, C# .NET backend and Mongo database all 
 of which are within docker containers for easy development and deployment.
 
 ## Installation

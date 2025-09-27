@@ -1,0 +1,14 @@
+services:
+  backend:
+    build: ./Backend
+    ports:
+      - "5000:8080"
+  db:
+    image: mongo:6
+    volumes:
+      - database:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+  database:
