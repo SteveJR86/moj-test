@@ -22,6 +22,14 @@ namespace Backend.Endpoints
             {
                 await taskServices.CreateAsync(item);
             });
+            app.MapPatch("/tasks/{id}", async (string id, TaskItem item, TaskServices taskServices) =>
+            {
+                await taskServices.UpdateAsync(id, item);
+            });
+            app.MapDelete("/tasks/{id}", async (string id, TaskServices taskServices) =>
+            {
+                await taskServices.RemoveAsync(id);
+            });
         }
     }
 }
