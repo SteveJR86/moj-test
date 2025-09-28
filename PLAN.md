@@ -13,7 +13,7 @@ as a good tracking tool and provide me with a roadmap for future development.
 (perhaps?) - Doesn't currently return ID number. Will revisit if this becomes an issue.
 [x] 5. Develop /tasks GET request to return all tasks.
 [x] 6. Develop /tasks?id=<number> or /tasks/:id request to return a single task by id.
-[ ] 7. Develop /tasks/id PATCH to update status of existing task
-[ ] 8. Develop /tasks/id DELETE to delete task
-[ ] 9. Get skeleton React app running using Vite within docker.
+[x] 7. Develop /tasks/id PUT to update status of existing task
+[x] 8. Develop /tasks/id DELETE to delete task
+[x] 9. Get skeleton React app running using Vite within docker.
 [ ] 10. Ensure frontend and backend can communicate while running in docker.

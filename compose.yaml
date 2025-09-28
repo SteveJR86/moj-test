@@ -1,14 +1,22 @@
 services:
+  frontend:
+    build:
+      context: ./task-manager/
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 3000:3000
   backend:
     build: ./Backend
     ports:
-      - "5000:8080"
+      - 5000:8080
   db:
     image: mongo:6
     volumes:
       - database:/data/db
     ports:
-      - "27017:27017"
+      - 27017:27017
 
 volumes:
   database:
