@@ -1,5 +1,5 @@
 ﻿using Backend.Models;
-
+using Backend.Services;
 using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace Backend.Endpoints
@@ -8,11 +8,19 @@ namespace Backend.Endpoints
     {
         public static void RegisterTaskEndpoints(this WebApplication app)
         {
-            app.MapGet("/tasks", () => "Another endpoint");
-            app.MapPost("/tasks", (TaskItem item) =>
+            app.MapGet("/tasks", async (TaskServices taskServices) =>
             {
-            // TODO: add code in to save item to database here
-                return item;
+                var results = await taskServices.GetAsync();
+                return results;
+            });
+            app.MapGet("/tasks/{id}", async (string id, TaskServices taskServices) =>
+            {
+                var results = await taskServices.GetAsync(id);
+                return results;
+            });
+            app.MapPost("/tasks", async (TaskItem item, TaskServices taskServices) =>
+            {
+                await taskServices.CreateAsync(item);
             });
         }
     }
