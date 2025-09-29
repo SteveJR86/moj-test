@@ -22,7 +22,7 @@ namespace Backend.Endpoints
             {
                 await taskServices.CreateAsync(item);
             });
-            app.MapPatch("/tasks/{id}", async (string id, TaskItem item, TaskServices taskServices) =>
+            app.MapPut("/tasks/{id}", async (string id, TaskItem item, TaskServices taskServices) =>
             {
                 await taskServices.UpdateAsync(id, item);
             });

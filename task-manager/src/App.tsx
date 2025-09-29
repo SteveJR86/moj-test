@@ -1,33 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { TaskList } from './components/TaskList/TaskList'
+import { EntryForm } from './components/EntryForm/EntryForm'
+import { useState, useEffect } from 'react'
+import type { TTaskItem } from './types/types'
+import { useDialog } from './hooks/useDialog'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const emptyTask = {
+    id: "",
+    title: "",
+    description: "",
+    status: "",
+    dateDue: ""
+  }
+  const [formItem, setFormItem] = useState<TTaskItem>(emptyTask)
+  const formDialog = useDialog();
+  const handleNewTask = () => {
+    setFormItem(emptyTask)
+    formDialog.open()
+  }
+
+  const [taskItems, setTaskItems] = useState<TTaskItem[]>([])
+
+  const fetchTasks = () => {
+    fetch("http://localhost:5000/tasks")
+      .then((response) => response.json())
+      .then((data) => setTaskItems(data))
+  }
+
+  useEffect(() => {
+    fetchTasks()
+  }, [])
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>MoJ Coding Challenge - Task Manager</h1>
+      <TaskList setFormItem={setFormItem} open={formDialog.open} taskItems={taskItems}/>
+      <EntryForm fetchTasks={fetchTasks} item={formItem} formRef={formDialog.dialogRef} close={formDialog.close} />
+      <button type="button" onClick={handleNewTask}>Add New Task</button>
     </>
   )
 }

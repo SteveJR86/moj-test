@@ -1,0 +1,24 @@
+.entryFormDialog {
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    top: 30px;
+}
+
+.inputForm {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.inputForm label {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.inputForm textarea {
+    height: 100px;
+}

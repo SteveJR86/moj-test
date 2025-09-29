@@ -16,4 +16,8 @@ as a good tracking tool and provide me with a roadmap for future development.
 [x] 7. Develop /tasks/id PUT to update status of existing task
 [x] 8. Develop /tasks/id DELETE to delete task
 [x] 9. Get skeleton React app running using Vite within docker.
-[ ] 10. Ensure frontend and backend can communicate while running in docker.
+[x] 10. Ensure frontend and backend can communicate while running in docker.
+[x] 11. Create tasks table
+[x] 12. Create modal for entering and updating tasks
+[ ] 13. Add form validation
+[ ] 14. Add backend validation (As you can't trust anything from the client)
