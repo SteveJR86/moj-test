@@ -7,9 +7,10 @@ type FormSetter = {
     setFormItem: React.Dispatch<React.SetStateAction<TTaskItem>>
     open: Function;
     taskItems: TTaskItem[];
+    fetchTasks: Function;
 }
 
-export const TaskList: FC<FormSetter> = ({ setFormItem, open, taskItems }) => {
+export const TaskList: FC<FormSetter> = ({ setFormItem, open, taskItems, fetchTasks }) => {
 
     return (
         <div>
@@ -21,7 +22,7 @@ export const TaskList: FC<FormSetter> = ({ setFormItem, open, taskItems }) => {
             <ul className={styles.taskListItems}>
                 {taskItems !== undefined && taskItems.length > 0 ?
                     taskItems.map((item) => {
-                        return <TaskItem key={item.id} item={item} setFormItem={setFormItem} open={open} />
+                        return <TaskItem key={item.id} item={item} setFormItem={setFormItem} open={open} fetchTasks={fetchTasks} />
                     })
                 : <p>No tasks recorded yet.</p>}
             </ul>

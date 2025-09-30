@@ -35,7 +35,7 @@ function App() {
   return (
     <>
       <h1>MoJ Coding Challenge - Task Manager</h1>
-      <TaskList setFormItem={setFormItem} open={formDialog.open} taskItems={taskItems}/>
+      <TaskList setFormItem={setFormItem} open={formDialog.open} taskItems={taskItems} fetchTasks={fetchTasks} />
       <EntryForm fetchTasks={fetchTasks} item={formItem} formRef={formDialog.dialogRef} close={formDialog.close} />
       <button type="button" onClick={handleNewTask}>Add New Task</button>
     </>

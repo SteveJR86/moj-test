@@ -6,9 +6,10 @@ type TTaskItemProps = {
     item: TTaskItem;
     setFormItem: React.Dispatch<React.SetStateAction<TTaskItem>>;
     open: Function;
+    fetchTasks: Function;
 }
 
-export const TaskItem: FC<TTaskItemProps> = ({ item, setFormItem, open }) => {
+export const TaskItem: FC<TTaskItemProps> = ({ item, setFormItem, open, fetchTasks }) => {
     const handleEdit = () => {
         setFormItem(item)
         open()
@@ -18,6 +19,7 @@ export const TaskItem: FC<TTaskItemProps> = ({ item, setFormItem, open }) => {
         fetch(`http://localhost:5000/tasks/${item.id}`, {
             method: "DELETE",
         });
+        fetchTasks()
     }
 
     return (

@@ -56,7 +56,7 @@ export const EntryForm: FC<TEntryFormProps> = ({ fetchTasks, item, formRef, clos
                 }
             })
         }
-        fetchTasks()
+        setTimeout(() => fetchTasks(), 100)
         close()
     }
 
