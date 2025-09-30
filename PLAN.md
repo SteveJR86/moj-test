@@ -25,3 +25,5 @@ as a good tracking tool and provide me with a roadmap for future development.
 [ ] 16. Add backend error handling.
 [ ] 17. Make layout suitable for mobile view.
 [ ] 18. Conduct accessibility testing and resolve any issues found.
+[ ] 19. Add frontend testing using cypress.
+[ ] 20. Investigate suitable testing library for backend.
