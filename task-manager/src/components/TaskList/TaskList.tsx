@@ -13,11 +13,13 @@ type FormSetter = {
 export const TaskList: FC<FormSetter> = ({ setFormItem, open, taskItems, fetchTasks }) => {
 
     return (
-        <div>
+        <div className={styles.taskListGrid}>
             <div className={styles.taskListHeadings}>
-                <p>Title</p>
-                <p>Status</p>
-                <p>Due Date</p>
+                <p className={styles.title}>Title</p>
+                <p className={styles.status}>Status</p>
+                <p className={styles.dueDate}>Due Date</p>
+                <div></div>
+                <div></div>
             </div>
             <ul className={styles.taskListItems}>
                 {taskItems !== undefined && taskItems.length > 0 ?

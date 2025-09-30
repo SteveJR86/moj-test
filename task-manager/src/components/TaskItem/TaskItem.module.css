@@ -1,6 +1,24 @@
 .taskItemGroup {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     list-style: none;
+    display: contents;
+}
+
+title {
+    grid-column: 1;
+}
+
+.status {
+    grid-column: 2;
+}
+
+.dueDate {
+    grid-column: 3;
+}
+
+.edit {
+    grid-column: 4;
+}
+
+.delete {
+    grid-column: 5;
 }

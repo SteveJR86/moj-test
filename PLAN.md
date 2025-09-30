@@ -21,3 +21,7 @@ as a good tracking tool and provide me with a roadmap for future development.
 [x] 12. Create modal for entering and updating tasks
 [ ] 13. Add form validation
 [ ] 14. Add backend validation (As you can't trust anything from the client)
+[ ] 15. Add frontend error handling.
+[ ] 16. Add backend error handling.
+[ ] 17. Make layout suitable for mobile view.
+[ ] 18. Conduct accessibility testing and resolve any issues found.

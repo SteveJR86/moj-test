@@ -24,11 +24,11 @@ export const TaskItem: FC<TTaskItemProps> = ({ item, setFormItem, open, fetchTas
 
     return (
         <li className={styles.taskItemGroup}>
-            <p>{item.title}</p>
-            <p>{item.status}</p>
-            <p>{item.dateDue.toLocaleString()}</p>
-            <button type="button" onClick={handleEdit}>Edit</button>
-            <button type="button" onClick={handleDelete}>Delete</button>
+            <p className={styles.title}>{item.title}</p>
+            <p className={styles.status}>{item.status}</p>
+            <p className={styles.dueDate}>{item.dateDue.toLocaleString()}</p>
+            <button className={styles.edit} type="button" onClick={handleEdit}>Edit</button>
+            <button className={styles.delete} type="button" onClick={handleDelete}>Delete</button>
         </li>
     )
 }

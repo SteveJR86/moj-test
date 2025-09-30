@@ -82,6 +82,7 @@ export const EntryForm: FC<TEntryFormProps> = ({ fetchTasks, item, formRef, clos
                     <input type="date" name="datetime" value={date} onChange={(event) => setDate(event.target.value)} />
                 </label>
                 <button>{item.title ? "Update task": "Add task"}</button>
+                <button type="button" onClick={() => close()}>Cancel</button>
             </form>
         </dialog>
     )

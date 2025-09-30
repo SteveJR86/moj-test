@@ -1,9 +1,27 @@
+.taskListGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
 .taskListHeadings {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: contents;
+}
+
+.title {
+    grid-column: 1;
+}
+
+.status {
+    grid-column: 2;
+}
+
+.dueDate {
+    grid-column: 3/4;
+    align-items: start;
 }
 
 .taskListItems {
     padding: 0;
+    display: contents;
 }
